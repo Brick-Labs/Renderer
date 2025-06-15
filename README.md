@@ -13,4 +13,4 @@ applications in the future.
 
 ## Setup
 - Install Vulkan SDK from this [Website](https://vulkan.lunarg.com).
-- Add this repo as submodule to the project `git submodule add https://github.com/Brick-Labs/Renderer.git`
+- Add this repo as submodule to the project `git submodule add https://github.com/Brick-Labs/Renderer.git` and clone submodules recursively `git submodule update --init --recursive`
