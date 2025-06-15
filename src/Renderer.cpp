@@ -1,7 +1,5 @@
 #include "Renderer.h"
 
-#include <cstdio>
+#include <iostream>
 
-void Renderer::init() {
-    printf("Renderer initialized");
-}
+void Renderer::init() { std::cout << "Renderer initialized" << std::endl; }
