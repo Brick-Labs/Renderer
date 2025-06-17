@@ -5,7 +5,7 @@ add_library(${PROJECT_NAME} STATIC
 # Namespace-Alias
 add_library(Renderer::Renderer ALIAS Renderer)
 
-# Füge Include-Verzeichnisse hinzu
+# Add Include-Path
 target_include_directories(Renderer
         PUBLIC
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../include>
