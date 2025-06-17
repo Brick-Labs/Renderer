@@ -1,5 +1,8 @@
 #include "Renderer.h"
 
+#include <vulkan/vulkan.hpp>
 #include <iostream>
 
-void Renderer::init() { std::cout << "Renderer initialized" << std::endl; }
+void Renderer::createInstance() {
+
+}
