@@ -3,6 +3,8 @@
 #include <cstdint>
 #include <string>
 
+namespace Renderer {
+
 struct Version {
     uint32_t major;
     uint32_t minor;
@@ -19,5 +21,7 @@ class Renderer {
              const char** glfwExtensions);
     ~Renderer();
 };
+
+}  // namespace Renderer
 
 #endif  // RENDERER_H

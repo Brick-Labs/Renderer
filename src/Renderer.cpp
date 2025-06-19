@@ -3,19 +3,19 @@
 #include <iostream>
 #include <vulkan/vulkan.hpp>
 
+namespace Renderer {
+
 class Renderer::Impl {
-    std::string appName;
-    VkInstance instance;
     const VkApplicationInfo appInfo;
     VkInstanceCreateInfo createInfo;
+    VkInstance instance;
 
    public:
     Impl(const char* appName, const Version version, const uint32_t glfwExtensionCount,
          const char** glfwExtensions)
-        : appName(appName),
-          appInfo(
+        : appInfo(
               {.sType = VK_STRUCTURE_TYPE_APPLICATION_INFO,
-               .pApplicationName = this->appName.data(),
+               .pApplicationName = appName,
                .applicationVersion = VK_MAKE_VERSION(version.major, version.minor, version.patch),
                .pEngineName = "BL-Renderer",
                .engineVersion = VK_MAKE_VERSION(0, 0, 1),
@@ -29,6 +29,7 @@ class Renderer::Impl {
         // Start macOS support
         std::vector<const char*> requiredExtensions;
 
+        requiredExtensions.reserve(glfwExtensionCount);
         for (uint32_t i = 0; i < glfwExtensionCount; i++) {
             requiredExtensions.emplace_back(glfwExtensions[i]);
         }
@@ -83,7 +84,7 @@ class Renderer::Impl {
             }
         }
 
-        if (missingExtensions.size() > 0) {
+        if (!missingExtensions.empty()) {
             std::string errorMessage = "Missing extensions:";
             for (const auto& missingExtension : missingExtensions) {
                 errorMessage += std::string("\n- ", missingExtension.extensionName);
@@ -98,3 +99,5 @@ Renderer::Renderer(const char* appName, const Version version, const uint32_t gl
     : pImpl(new Impl(appName, version, glfwExtensionCount, glfwExtensions)) {}
 
 Renderer::~Renderer() { delete pImpl; }
+
+}  // namespace Renderer
