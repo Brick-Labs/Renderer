@@ -7,9 +7,14 @@ applications in the future.
 > [!IMPORTANT]
 > This renderer cannot be used independently, only with programs that make use of it.
 
-## Planed Features
-- **Real-time rendering**: Providing different rendering modes, including ray tracing and rasterization, in order to support different platforms and hardware.
-- **Cross-platform**: The renderer will be designed to work on multiple platforms, including Windows, Linux, and macOS.
+## Requirements
+
+### Functional Requirements
+- [ ] Render building blocks models and write the output to a given imgae buffer
+- [ ] 
+
+### Non-Functional Requirements
+
 
 ## Setup
 - Install Vulkan SDK from this [Website](https://vulkan.lunarg.com).
