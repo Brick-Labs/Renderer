@@ -1,13 +1,13 @@
 # Renderer
 
-This project aims to develop a real-time, cross-platform renderer focused on rendering digital bricks with high visual
-quality and performance. The goal is to create a flexible rendering engine that can be integrated into different
-applications in the future.
+This project aims to develop a real-time, cross-platform renderer focused on only rendering digital bricks with high visual quality and performance. The goal is to create a flexible rendering engine that can be integrated into different applications in the future.
 
 > [!IMPORTANT]
 > This renderer cannot be used independently, only with programs that make use of it.
 
 ## Requirements
+All functional and non-functional requirements are listed below in the form of check boxes to provide an overview of what has already been implemented.
+
 > [!TIP]
 > A block model refers to a list of building blocks, including their positions and colors.
 
@@ -28,3 +28,6 @@ applications in the future.
 ## Setup
 1. Install Vulkan SDK from this [Website](https://vulkan.lunarg.com).
 2. Add this repo as submodule to the project `git submodule add https://github.com/Brick-Labs/Renderer.git` and clone submodules recursively `git submodule update --init --recursive`
+
+## Usage
+This section describes how this library can be integrated into other projects and used.
